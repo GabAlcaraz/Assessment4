@@ -1,0 +1,31 @@
+//Render Index page
+app.get('/', (req, res) => {
+    res.render('index')
+})
+
+//Start Server
+const server = app.listen(port, () => {
+    console.log(`Server Running on port ${port}`)
+})
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Chat App</title>
+</head>
+<body>
+    <div class="content">
+        <div>
+            <p>Welcome to Chat App</p>
+            <form action="/room" method="POST">
+                <input type="text" placeholder="Enter your Name" class="username" name="username" required>
+                <input type="text" placeholder="Enter Room Name" class="roomname" name="roomname" required>
+                <input type="submit" value="Enter">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
